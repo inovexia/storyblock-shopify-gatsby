@@ -1,0 +1,1 @@
+# storyblock-shopify-gatsby
