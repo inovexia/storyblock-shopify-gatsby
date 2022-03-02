@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 import { sbEditable } from "@storyblok/storyblok-editable"
 import DynamicComponent from "../components/dynamicComponent"
 import useStoryblok from "../lib/storyblok"
+import {Container} from "react-bootstrap"
 
 
 const IndexPage = ({data, location}) => {
@@ -20,7 +21,9 @@ const IndexPage = ({data, location}) => {
   return (
   <Layout>
     <Seo title="Home" />
-    <h1>{story.content.title}</h1>
+    <div className={`home-page`}>
+      <Container>
+      <h1 className={`display-1`}>{story.content.title}</h1>
     <div {...sbEditable(story)}>
       {components}
     </div>
@@ -40,6 +43,8 @@ const IndexPage = ({data, location}) => {
       <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
       <Link to="/using-dsg">Go to "Using DSG"</Link>
     </p>
+      </Container>
+    </div>
   </Layout>
 )}
 

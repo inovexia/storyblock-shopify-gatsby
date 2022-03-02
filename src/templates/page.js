@@ -1,6 +1,5 @@
 import * as React from "react"
 import {Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -28,10 +27,11 @@ story = useStoryblok(story, location)
     <h1>{story.content.title}</h1>
     <h1>{story.content.about_subtitle}</h1>
     
-    <StaticImage
+    <img
       src={story.content.about_first_image}
       width={300}
       quality={95}
+      alt=""
     />
     <p>
       <Link to="/page-2/">Go to page 2</Link> <br />

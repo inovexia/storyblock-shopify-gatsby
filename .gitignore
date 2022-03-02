@@ -67,3 +67,14 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Environment
+.cache
+.vscode
+# Folders
+/node_modules
+/public
+# Files
+package-lock.json
+*.code-workspace
+

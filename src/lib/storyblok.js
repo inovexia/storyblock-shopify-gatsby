@@ -55,7 +55,7 @@ export default function useStoryblok(originalStory, location) {
         // first load the bridge and then attach the events
         addBridge(initEventListeners)
       }
-    }, []) // it's important to run the effect only once to avoid multiple event attachment
+    }) // it's important to run the effect only once to avoid multiple event attachment
  
     return story;
 }
