@@ -5,7 +5,7 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://inovexia-store.myshopify.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +25,38 @@ module.exports = {
         localAssets: true, // Optional parameter to download the images to use with Gatsby Image Plugin
         languages: ['de', 'at'] // Optional parameter. Omission will retrieve all languages by default.
       }
+    },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        // This type will contain remote schema Query type
+        typeName: 'ShopifyStore',
+        // This is field under which it's accessible
+        fieldName: 'store',
+        // Url to query from
+        url: `https://inovexia-store.myshopify.com/api/2022-01/graphql.json`,
+        headers: {
+          // Learn about environment variables: https://gatsby.dev/env-vars
+          'X-Shopify-Storefront-Access-Token': `96866a02b982dd23ea5cb1ed8fb33c99`,
+        },
+        // refetchInterval: 60,
+      },
+    },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        // This type will contain remote schema Query type
+        typeName: 'ShopifyStoreAdmin',
+        // This is field under which it's accessible
+        fieldName: 'storeAdmin',
+        // Url to query from
+        url: `https://inovexia-store.myshopify.com/admin/api/2022-01/graphql.json`,
+        headers: {
+          // Learn about environment variables: https://gatsby.dev/env-vars
+          'X-Shopify-Access-Token': `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`,
+        },
+        // refetchInterval: 60,
+      },
     },
     {
       resolve: `gatsby-plugin-sass`,
